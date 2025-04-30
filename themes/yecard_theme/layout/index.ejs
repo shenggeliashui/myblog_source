@@ -1,0 +1,66 @@
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title"><%= theme.hero.title || config.title %></h1>
+    <p class="hero-subtitle"><%= theme.hero.subtitle || config.subtitle %></p>
+    
+    <% if (theme.hero.buttons && theme.hero.buttons.length) { %>
+      <div class="hero-buttons">
+        <% theme.hero.buttons.forEach(function(button) { %>
+          <a href="<%- url_for(button.url) %>" class="button <%= button.type || 'primary' %>">
+            <%= button.text %>
+          </a>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<% if (theme.features && theme.features.length) { %>
+  <div class="features-grid">
+    <% theme.features.forEach(function(feature) { %>
+      <div class="feature-card">
+        <h3 class="feature-title"><%= feature.title %></h3>
+        <p class="feature-description"><%= feature.description %></p>
+      </div>
+    <% }); %>
+  </div>
+<% } %>
+
+<div class="posts-section">
+  <% page.posts.each(function(post) { %>
+    <article class="post-item">
+      <h2 class="post-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+        <% if (post.categories && post.categories.length) { %>
+          <span class="post-categories">
+            <% post.categories.each(function(category) { %>
+              <a href="<%- url_for(category.path) %>" class="post-category"><%= category.name %></a>
+            <% }); %>
+          </span>
+        <% } %>
+      </div>
+      <div class="post-excerpt">
+        <% if (post.excerpt) { %>
+          <%- post.excerpt %>
+        <% } else { %>
+          <%- truncate(strip_html(post.content), {length: 200}) %>
+        <% } %>
+      </div>
+      <a href="<%- url_for(post.path) %>" class="read-more">阅读更多</a>
+    </article>
+  <% }); %>
+</div>
+
+<% if (page.total > 1) { %>
+  <div class="pagination">
+    <% if (page.prev) { %>
+      <a href="<%- url_for(page.prev_link) %>" class="pagination-prev">上一页</a>
+    <% } %>
+    <% if (page.next) { %>
+      <a href="<%- url_for(page.next_link) %>" class="pagination-next">下一页</a>
+    <% } %>
+  </div>
+<% } %>

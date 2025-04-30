@@ -1,0 +1,60 @@
+# 主题配置文件
+
+# 网站标题和描述
+title: 数字指南
+subtitle: 你的数字世界导航
+
+# 网站图标
+favicon: /favicon.ico
+
+# 网站 Logo
+logo: /images/logo.png
+
+# 导航菜单
+menu:
+  首页: /
+  归档: /archives
+  分类: /categories
+  标签: /tags
+  关于: /about
+
+# 英雄区域配置
+hero:
+  title: W 野卡
+  subtitle: 一分钟注册，轻松订阅海外线上服务
+  buttons:
+    - text: 前往官网
+      url: /official
+      type: primary
+    - text: 常见问题
+      url: /faq
+      type: secondary
+
+# 特性卡片
+features:
+  - title: 注册与开卡
+    description: 访问野卡官方网站，输入手机号码并完成实名认证，随后选择适合自己的套餐进行开通，平台提供了多种套餐选择，用户可以根据自身需求灵活选用。
+  - title: 充值与支付
+    description: 支持支付宝或USDT转账等方式进行充值，充值后即可使用虚拟信用卡进行在线支付，在订阅网页填写Wildcard卡片信息，即可轻松完成支付流程
+  - title: 绑定与管理
+    description: 用户可以将Wildcard虚拟信用卡绑定到常用的支付平台或软件上，方便日后快速支付，同时，平台提供了完善的卡片管理功能，用户可以随时查看交易记录，调整卡片设置等
+  - title: 便捷的跨境支付
+    description: 野卡WildCard 支持多种支付场景，包括OpenAI/ChatGPT、Midjourney、Google Play、Spotify 等数十种服务，无论是热门的 AI 服务还是流媒体平台，都能轻松支付。
+  - title: 安全可靠
+    description: WildCard 采用先进的加密技术，保障用户的支付安全。同时，虚拟信用卡仅限用户本人使用，进一步降低了风险。
+  - title: 丰富的增值服务
+    description: 除了虚拟信用卡服务，野卡还提供了一系列增值服务，如海外邮箱、海外手机号、OpenAI API 转发服务等，这些工具能帮助用户更便捷地访问和使用海外服务。
+
+# 页脚链接
+footer_links:
+  关于我们: /about
+  联系方式: /contact
+  隐私政策: /privacy
+  服务条款: /terms
+
+# 是否显示文章导航（上一篇/下一篇）
+show_post_nav: true
+
+# 自定义脚本
+scripts:
+  - /js/main.js
